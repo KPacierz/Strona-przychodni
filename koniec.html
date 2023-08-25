@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podsumowanie</title>
+</head>
+<body>   
+  <script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[[]]/g, '\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    
+    var d = getParameterByName('dzien');
+    var g = getParameterByName('godzina');
+    var c = getParameterByName('cel');
+    var l = getParameterByName('lekarz');
+    console.log(d);
+    console.log(g);
+    console.log(c);
+    </script>
+    <div class="header_container">
+      <a href="index.html"><img src=".\img\Line 2.png" class="headerLogo" alt="logo"></a>
+            <div class="headerText">
+            <h2>Kraków, ul. Zdrowotna 11, tel. 123-456-789, 987-654-321, email: polmed@zdrowie.pl </h2>
+            <h3>Witamy w przychodni zdrowotnej POLmed. Twoje zdrowie to dla nas priorytet.</h3>
+        </div>
+    </div>
+    <div class="koniec_text">
+      <h2>Podsumowanie wizyty</h2>
+      <p>Wybrany lekarz: <script>document.write(l)</script><br>
+        Dzień wizyty: <script>document.write(d)</script><br>
+        Godzina wizyty: <script>document.write(g)</script><br>
+        Cel wizyty: <script>document.write(c)</script>
+      </p>
+    </div>
+    <div class="koniec_b">
+      <button class="but" id="myBtn">Potwierdź wizytę</button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Potwierdzenie wizyty</h2>
+          </div>
+          <div class="modal-body">
+            <p>Wizyta została pomyślnie zatwierdzona<br>
+              Dziekujemy za skorzystanie z naszych usług</p>
+          </div>
+          <div class="modal-footer">
+            <div class="anuluj_b">
+            <button onclick="location.href='index.html'">Powrót do strony głownej</button>
+          </div>
+          </div>
+        </div>
+      </div>
+      <script src="dialog.js"></script>
+
+      <button class="but" id="myBtn1">Anuluj wizytę</button>
+      <div id="myModal1" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Uwaga!</h2>
+          </div>
+          <div class="modal-body">
+            <p>Czy na pewno chcesz anulować wizytę?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="anuluj_b">
+            <button onclick="location.href='index.html'">Tak</button>
+            <button class="close1">Nie</button>
+          </div>
+          </div>
+        </div>
+      </div>
+      <script src="dialog1.js"></script>
+    </div>
+
+      <div class="footerDivClass">
+          <a href="https://www.nfz.gov.pl/"><img src=".\img\1.png" class="footerImg" alt="nfz"></a>
+          <a href="https://www.pzu.pl"><img src=".\img\2.png" class="footerImg" alt="pzu"/></a>
+          <a href="https://www.facebook.com"><img src=".\img\3.png" class="footerImg" alt="fb"/></a>
+          <a href="https://www.instagram.com"><img src=".\img\4.png" class="footerImg" alt="insta"/></a>
+      </div>
+
+</body>
+</html>
